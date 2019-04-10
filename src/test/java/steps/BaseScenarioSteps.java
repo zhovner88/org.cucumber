@@ -9,7 +9,7 @@ import org.junit.Assert;
 public class BaseScenarioSteps {
 
     private int bananaPrice = 0;
-    private Checkout checkout;
+    private Checkout checkout = new Checkout();
 
     @Given("the piece of {string} is {int}c")
     public void the_piese_of_is_c(String itemName, int price) throws Throwable {
@@ -18,13 +18,11 @@ public class BaseScenarioSteps {
 
     @When("I checkout {int} {string}")
     public void i_checkout(int itemCount, String itemName) {
-        checkout = new Checkout();
         checkout.add(itemCount, bananaPrice);
     }
 
     @Then("the total price should be {int}c")
     public void theTotalPriceShouldBeC(int total) throws Throwable {
-        checkout = new Checkout();
-        Assert.assertEquals(total, checkout.total(total));
+        Assert.assertEquals(total, checkout.total());
     }
 }
