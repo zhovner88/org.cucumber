@@ -1,6 +1,6 @@
 package implementation;
 
-import io.cucumber.cucumberexpressions.Transformer;
+import cucumber.api.Transformer;
 
 public class MoneyConverter extends Transformer<Money> {
     public Money transform(String amount) {
