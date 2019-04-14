@@ -1,7 +1,13 @@
 package implementation;
 
 public class Teller {
-    public void withdrawFrom(Account account, int dollars) {
+    private CashSlot cashSlot;
 
+    public Teller(CashSlot cashSlot) {
+        this.cashSlot = cashSlot;
+    }
+
+    public void withdrawFrom(Account account, int dollars) {
+        cashSlot.dispense(dollars);
     }
 }

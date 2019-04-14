@@ -2,13 +2,13 @@ package implementation;
 
 public class Account {
 
-    private int balance;
+    private Money balance = new Money();
 
     public void deposit(Money amount) {
-        balance += amount;
+        balance = balance.add(amount);
     }
 
-    public int getBalance() {
+    public Money getBalance() {
         return balance;
     }
 
