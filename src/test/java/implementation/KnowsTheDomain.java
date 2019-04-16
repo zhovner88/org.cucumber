@@ -1,8 +1,12 @@
 package implementation;
 
+import nicebank.AtmUserInterface;
+import nicebank.Teller;
+
 public class KnowsTheDomain {
+
     private Account myAccount;
-    private Teller teller;
+    private nicebank.Teller teller;
     private CashSlot cashSlot;
 
     public Account getMyAccount() {
@@ -15,7 +19,7 @@ public class KnowsTheDomain {
 
     public Teller getTeller() {
         if (teller == null){
-            teller = new Teller(getCashSlot());
+            teller = new AtmUserInterface();
         }
 
         return teller;

@@ -16,11 +16,14 @@ public class AccountSteps {
         this.helper = helper;
     }
 
-    @Given("^I have deposited (\\$\\d+\\.\\d+) in my account$")
-    public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount)
+    @Given("^My account has been credited with (\\$\\d+\\.\\d+)$")
+    public void myAccountHasBeenCreditedWith(@Transform(MoneyConverter.class) Money amount)
             throws Throwable {
-        helper.getMyAccount().deposit(amount);
+        helper.getMyAccount().credit(amount);
+    }
 
-        Assert.assertEquals("Incorrect account balance -", amount, helper.getMyAccount().getBalance());
+    @Then("^The balance of my account should be (\\$\\d+\\.\\d+)$")
+    public void theBalanceOfMyAccountShouldBe$(@Transform(MoneyConverter.class) Money amount) throws Throwable {
+        Assert.assertEquals("Incorrect account balance - ", amount, helper.getMyAccount().getBalance());
     }
 }

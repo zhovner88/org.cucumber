@@ -12,9 +12,9 @@ public class TellerSteps {
     }
 
     @When("^I withdraw \\$(\\d+)$")
-    public void iRequest$(int dollars) throws Throwable {
+    public void iRequest$(int amount) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        helper.getTeller().withdrawFrom(helper.getMyAccount(), dollars);
+        helper.getTeller().withdrawFrom(helper.getMyAccount(), amount);
     }
 
 }
