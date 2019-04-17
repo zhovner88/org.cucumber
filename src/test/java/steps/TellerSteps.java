@@ -2,7 +2,6 @@ package steps;
 
 import cucumber.api.java.en.When;
 import implementation.KnowsTheDomain;
-import nicebank.AtmUserInterface;
 
 public class TellerSteps {
 

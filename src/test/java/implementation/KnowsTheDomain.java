@@ -1,7 +1,7 @@
 package implementation;
 
-import nicebank.AtmUserInterface;
 import nicebank.Teller;
+import support.AtmUserInterface;
 
 public class KnowsTheDomain {
 
