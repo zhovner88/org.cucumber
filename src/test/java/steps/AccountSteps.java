@@ -1,5 +1,6 @@
 package steps;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.*;
 import cucumber.api.Transform;
 
@@ -7,7 +8,6 @@ import implementation.KnowsTheDomain;
 import implementation.Money;
 import implementation.MoneyConverter;
 import org.junit.*;
-
 
 public class AccountSteps {
     KnowsTheDomain helper;
